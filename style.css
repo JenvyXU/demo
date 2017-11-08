@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+kbd{
+    border: 1px solid red;
+    width: 4em;
+    height: 4em;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+}
+main{
+    text-align: center;
+}

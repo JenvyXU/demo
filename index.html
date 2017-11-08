@@ -27,12 +27,17 @@
             mainXXXXX.appendChild(divXXXXX)
             row = keys[index]
             index2 = 0
-
+            while (index2 < row['length']) {
+                console.log(row['0'])
                 kbdXXXXX = document.createElement('kbd')
+                kbdXXXXX.textContent = row[index2] 
                 divXXXXX.appendChild(kbdXXXXX)
-                kbdXXXXX.textContent='hello'
-                index2=index2+1
-    
+                buttonX=document.createElement('button')
+                buttonX.textContent='编辑'
+                kbdXXXXX.appendChild(buttonX)
+
+                index2 = index2 + 1
+            }
 
             index = index + 1
         }
