@@ -3,9 +3,9 @@
     padding: 0;
 }
 kbd{
-    border: 1px solid red;
-    width: 4em;
-    height: 4em;
+    border: 1px solid rgba(24, 57, 70, 0.103);
+    width: 8em;
+    height: 8em;
     display: inline-block;
     position: relative;
     text-transform: uppercase;
@@ -17,14 +17,14 @@ kbd >button{
     display: none;
  
 }
-kbd :hover>botton{
+kbd:hover > button{
     display: inline-block;
 }
 main{
     text-align: center;
 }
 #mainXXXXX{
-	display: inline-block;;
+	display: inline-block;
 }
 #mainXXXXX > div:nth-child(2){
 	margin-left: 2em;
@@ -32,3 +32,11 @@ main{
 #mainXXXXX > div:nth-child(3){
 	margin-left: 4em;
 }
+.wrapper{
+    margin-top: 300px;
+    margin-bottom: 200px;
+    font-family:'Times New Roman';
+    font-weight: bold;
+    font-size: 20px;
+}
+

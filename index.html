@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-
 <head>
     <meta charset="UTF-8">
     <title>键盘导航</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-
-<body>
+<body>        
     <main>
         <div class="wrapper" id="mainXXXXX">
-
         </div>
+
     </main>
     <script>
         keys = {
@@ -32,12 +30,10 @@
             row = keys[index]
             index2 = 0
             while (index2 < row['length']) {
-                console.log(row['0'])
                 kbdXXXXX = document.createElement('kbd')
-                kbdXXXXX.textContent = row[index2] 
-             
+                kbdXXXXX.textContent = row[index2]       
                 buttonX=document.createElement('button')
-               buttonX.textContent='编辑'
+                buttonX.textContent='编辑'
                 buttonX.id=row[index2]
                 buttonX.onclick=function(zxcvbnm){
                     key=zxcvbnm['target']['id']
@@ -55,12 +51,11 @@
         document.onkeypress=function(zxcvbnm){
             key=zxcvbnm['key']
             website=hash[key]
-            console.log(key)
-            console.log(website)
+          //  console.log(key)
+          //  console.log(website)
             //window.open('http://'+website,'_blank')
         }
     </script>
-
 </body>
 
 </html>
