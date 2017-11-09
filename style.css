@@ -10,6 +10,25 @@ kbd{
     position: relative;
     text-transform: uppercase;
 }
+kbd >button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+ 
+}
+kbd :hover>botton{
+    display: inline-block;
+}
 main{
     text-align: center;
+}
+#mainXXXXX{
+	display: inline-block;;
+}
+#mainXXXXX > div:nth-child(2){
+	margin-left: 2em;
+}
+#mainXXXXX > div:nth-child(3){
+	margin-left: 4em;
 }

@@ -21,6 +21,10 @@
             'length': 3
         }
         hash = { 'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com' }
+        hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null') 
+		if(hashInLocalStorage){
+			hash = hashInLocalStorage
+		}
         index = 0
         while (index < keys['length']) {
             divXXXXX = document.createElement('div')
@@ -31,20 +35,30 @@
                 console.log(row['0'])
                 kbdXXXXX = document.createElement('kbd')
                 kbdXXXXX.textContent = row[index2] 
-                divXXXXX.appendChild(kbdXXXXX)
+             
                 buttonX=document.createElement('button')
-                buttonX.textContent='编辑'
-                kbdXXXXX.appendChild(buttonX)
-
+               buttonX.textContent='编辑'
+                buttonX.id=row[index2]
+                buttonX.onclick=function(zxcvbnm){
+                    key=zxcvbnm['target']['id']
+                    x=prompt('给我一个网址')
+                    hash[key]=x
+                    localStorage.setItem('zzz',JSON.stringify(hash))
+                    console.log(hash)
+                 }
+                kbdXXXXX.appendChild(buttonX)  
+                divXXXXX.appendChild(kbdXXXXX)
                 index2 = index2 + 1
             }
-
             index = index + 1
         }
-
-
-
-
+        document.onkeypress=function(zxcvbnm){
+            key=zxcvbnm['key']
+            website=hash[key]
+            console.log(key)
+            console.log(website)
+            //window.open('http://'+website,'_blank')
+        }
     </script>
 
 </body>
