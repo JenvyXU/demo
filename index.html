@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
     <meta charset="UTF-8">
     <title>键盘导航</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body>        
+
+<body>
+    <div class="picture">
+        <img src="./img/bg.jpg" alt="#">
+    </div>
+    <div class="mask">
+
+    </div>
+    <div class="search">
+        <input type="text" id="input">
+        <button id="baidu">百度一下</button>
+        <button id="google"> Google </button>
+    </div>
+
     <main>
         <div class="wrapper" id="mainXXXXX">
         </div>
-
     </main>
+
     <script>
         keys = {
             '0': { 0: 'Q', 1: 'W', 2: 'E', 3: 'R', 4: 'T', 5: 'Y', 6: 'U', 7: 'I', 8: 'O', 9: 'P', 'length': 10 },
@@ -19,10 +33,10 @@
             'length': 3
         }
         hash = { 'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com' }
-        hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null') 
-		if(hashInLocalStorage){
-			hash = hashInLocalStorage
-		}
+        hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+        if (hashInLocalStorage) {
+            hash = hashInLocalStorage
+        }
         index = 0
         while (index < keys['length']) {
             divXXXXX = document.createElement('div')
@@ -31,28 +45,28 @@
             index2 = 0
             while (index2 < row['length']) {
                 kbdXXXXX = document.createElement('kbd')
-                kbdXXXXX.textContent = row[index2]       
-                buttonX=document.createElement('button')
-                buttonX.textContent='编辑'
-                buttonX.id=row[index2]
-                buttonX.onclick=function(zxcvbnm){
-                    key=zxcvbnm['target']['id']
-                    x=prompt('给我一个网址')
-                    hash[key]=x
-                    localStorage.setItem('zzz',JSON.stringify(hash))
+                kbdXXXXX.textContent = row[index2]
+                buttonX = document.createElement('button')
+                buttonX.textContent = '编辑'
+                buttonX.id = row[index2]
+                buttonX.onclick = function (zxcvbnm) {
+                    key = zxcvbnm['target']['id']
+                    x = prompt('给我一个网址')
+                    hash[key] = x
+                    localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
-                 }
-                kbdXXXXX.appendChild(buttonX)  
+                }
+                kbdXXXXX.appendChild(buttonX)
                 divXXXXX.appendChild(kbdXXXXX)
                 index2 = index2 + 1
             }
             index = index + 1
         }
-        document.onkeypress=function(zxcvbnm){
-            key=zxcvbnm['key']
-            website=hash[key]
-          //  console.log(key)
-          //  console.log(website)
+        document.onkeypress = function (zxcvbnm) {
+            key = zxcvbnm['key']
+            website = hash[key]
+            //  console.log(key)
+            //  console.log(website)
             //window.open('http://'+website,'_blank')
         }
     </script>
