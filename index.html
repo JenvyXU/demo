@@ -8,56 +8,60 @@
 </head>
 
 <body>
-    <div class="picture">
-        <img src="./img/bg.jpg" alt="#">
-    </div>
-    <div class="mask">
-
-    </div>
-    <div class="search">
-        <input type="text" id="input">
-        <button id="baidu">百度一下</button>
-        <button id="google"> &nbsp; Google &nbsp;&nbsp;</button>
-    </div>
-
     <main>
-        <div class="wrapper" id="mainXXXXX">
+        <div class="wrapper" id="main">
         </div>
     </main>
 
     <script>
         keys = {
-            '0': { 0: 'Q', 1: 'W', 2: 'E', 3: 'R', 4: 'T', 5: 'Y', 6: 'U', 7: 'I', 8: 'O', 9: 'P', 'length': 10 },
-            '1': { 0: 'A', 1: 'S', 2: 'D', 3: 'F', 4: 'G', 5: 'H', 6: 'J', 7: 'K', 8: 'L', 'length': 9 },
-            '2': { 0: 'Z', 1: 'X', 2: 'C', 3: 'V', 4: 'B', 5: 'N', 6: 'M', 'length': 7 },
+            '0': { 0: 'q', 1: 'w', 2: 'e', 3: 'r', 4: 't', 5: 'y', 6: 'u', 7: 'i', 8: 'o', 9: 'p', 'length': 10 },
+            '1': { 0: 'a', 1: 's', 2: 'd', 3: 'f', 4: 'g', 5: 'h', 6: 'j', 7: 'k', 8: 'l', 'length': 9 },
+            '2': { 0: 'z', 1: 'x', 2: 'c', 3: 'v', 4: 'b', 5: 'n', 6: 'm', 'length': 7 },
             'length': 3
         }
-        hash = { 'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'renren.com', 't': 'tianya.com' }
+        hash = { 'q': 'qq.com', 'w': 'weibo.com', 'e': 'ele.me', 'r': 'souhu.com', 't': 'tianya.com' }
         hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
         if (hashInLocalStorage) {
             hash = hashInLocalStorage
         }
         index = 0
         while (index < keys['length']) {
-            divXXXXX = document.createElement('div')
-            mainXXXXX.appendChild(divXXXXX)
+            div = document.createElement('div')
+            div.className = 'row'
+            main.appendChild(div)
             row = keys[index]
             index2 = 0
             while (index2 < row['length']) {
-                kbdXXXXX = document.createElement('kbd')
-                kbdXXXXX.textContent = row[index2]
-                buttonX = document.createElement('button')
-                buttonX.textContent = '编辑'
-                buttonX.id = row[index2]
-                buttonX.onclick = function (zxcvbnm) {
+                kbd = document.createElement('kbd')
+                span = document.createElement('span')
+                span.className = 'text'
+                kbd.appendChild(span)
+                span.textContent = row[index2]
+                kbd.className = 'key'
+                button = document.createElement('button')
+                button.textContent = '编辑'
+                button.id = row[index2]
+                img = document.createElement('img')
+                if (hash[row[index2]]) {
+                    img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
+                }
+                else {
+                    img.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
+
+                console.log(img.src)
+                kbd.appendChild(img)
+                button.onclick = function (zxcvbnm) {
                     key = zxcvbnm['target']['id']
                     x = prompt('给我一个网址')
                     hash[key] = x
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
                 }
-                kbdXXXXX.appendChild(buttonX)
-                divXXXXX.appendChild(kbdXXXXX)
+                kbd.appendChild(button)
+                div.appendChild(kbd)
+
                 index2 = index2 + 1
             }
             index = index + 1
@@ -67,7 +71,7 @@
             website = hash[key]
             //  console.log(key)
             //  console.log(website)
-            window.open('http://'+website,'_blank')
+            window.open('http://' + website, '_blank')
         }
     </script>
 </body>

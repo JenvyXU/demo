@@ -2,159 +2,78 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+  background: grey url(./img/wall.jpg) no-repeat center center;
+  background-size: cover;
+}
 main{
     text-align: center;
+    display:flex;
+    align-items: center;
+    justify-content: center; 
+    height: 100vh; 
 }
-#mainXXXXX{
+#main{
 	display: inline-block;
 }
-#mainXXXXX > div:nth-child(2){
-	margin-left: 2em;
+#main > div:nth-child(2){
+	margin-left: -16px;
 }
-#mainXXXXX > div:nth-child(3){
-	margin-left: 4em;
+#main > div:nth-child(3){
+	margin-left: -136px;
 }
 .wrapper{
     margin-top: 400px;
     margin-bottom: 200px;
-    font-family:'Times New Roman';
-    font-weight: bold;
-    font-size: 20px;
-    position: 
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
 }
-.picture{
-    position: absolute;
+.key{
+  width:100px;
+  height:80px;
+  background:linear-gradient(to bottom,#292929 0%,#111111 100%);
+  color: #c5c5c5;
+  border-radius: 7px;
+  box-shadow: 0 0 0 2px #1a1b1c,0 0 0 6px #1f2020,0 2px 0 5px #080808;
+  display: inline-block;
+
+  font-size: 24px;
+  font-family: helvetica;
+  font-weight: bold;
 }
-.search{
-    text-align: center;
-    display:inline-block;
-    position: fixed;
-    width:100%;
+.row{
+  margin: 25px;
+
 }
-.mask{
-    width: 100%;
-    height: 69px;
-    background-color:black;
-    position: fixed;
-    opacity: 0.4;
+.row .key{
+  margin: 0 10px;
+}
+.key .text{
+  position: absolute;
+  left: 6px;
+  top: 4px;
+}
+img{
+  position: absolute;
+  left: 6px;
+  bottom: 2px;
 }
 
-#input{
-    margin: 20px;
-    padding-top:5px;
-    padding-bottom: 5px;
-}
-
-#baidu{
-    padding: 4px;
-}
-
-#google{
-    padding-top: 6px;
-    padding-bottom: 4px;
-}
-/*
 kbd{
-    border: 5px solid rgba(185, 2, 218, 0.753);
-    width: 5em;
-    height: 5em;
-    display: inline-block;
-    position: relative;
     text-transform: uppercase;
-    background-color: rgb(195, 188, 221);
-}
-
-*/
-kbd >button{
-    position: absolute;
-    right: 30px;
-    color: rgb(146,127,162);
-    bottom: 3px;
-    border-radius: 5px;
-    display: none;
- 
-}
-kbd {
-    margin: 10px;
-    display: inline-block;
-    font-size: 40px;
-    font-family: Futura Md BT;
-    width: 100px; height: 100px;
-    border: 4px solid rgba(245, 246, 247, 0.267);
-    color: rgba(240, 240, 240, 0.274);
-    background-color: rgba(226, 226, 221, 0.26);
-    border-radius: 87% 91% 98% 100%;
-    -webkit-transition: all .35s;
-    transition: all .35s;
-    overflow: hidden;
     position: relative;
-  }
-  kbd:hover {
-    border-radius: 95% 70% 100% 80%;
-    transform: rotate(-2deg);
-  }
+}
+kbd img{
+  height: 25px;
+  width: 25px;
+}
+button{
+  display: none;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
   kbd:hover>button{
       display: inline-block;
   }
 
-  @-webkit-keyframes greenPulse {
-    from { background-color: #f5f7f1; -webkit-box-shadow: 0 0 9px #333; }
-    50% { background-color: #e3e6dc; -webkit-box-shadow: 0 0 18px #e2e4dc; }
-    to { background-color: #e3e7d5; -webkit-box-shadow: 0 0 9px #333; }
-  }
- button {
-    -webkit-animation-name: greenPulse;
-    -webkit-animation-duration: 2s;
-    -webkit-animation-iteration-count: infinite;
-  }
-  
-  kbd:nth-child(2n+1) {
-    border-radius: 59% 52% 56% 59%;
-    transform: rotate(-6deg);
-  }
-  
-  kbd:nth-child(2n+1):hover {
-    border-radius: 51% 67% 56% 64%;
-    transform: rotate(-4deg);
-  }
-  
-  kbd:nth-child(3n+2) {
-    border-radius: 84% 94% 83% 72%;
-    transform: rotate(5deg);
-  }
-  
-  kbd:nth-child(3n+2):hover {
-    border-radius: 69% 64% 53% 70%;
-    transform: rotate(0deg);
-  }
-  
-  kbd:nth-child(5n+3) {
-    border-radius: 73% 100% 82% 100%;
-    transform: rotate(7deg);
-  }
-  
-  kbd:nth-child(5n+3):hover {
-    border-radius: 73%;
-    transform: rotate(7deg);
-  }
-  
-  kbd:nth-child(7n+5) {
-    border-radius: 93% 90% 85% 78%;
-    transform: rotate(-2deg);
-  }
-  
-  kbd:nth-child(7n+5):hover {
-    border-radius: 53% 70% 85% 68%;
-    transform: rotate(-2deg);
-  }
-  
-  kbd:nth-child(11n+7) {
-    border-radius: 68% 68% 83% 53%;
-    transform: rotate(-2deg);
-  }
-  
-  kbd:nth-child(11n+7):hover {
-    border-radius: 58% 98% 78% 83%;
-    transform: rotate(3deg);
-  }
