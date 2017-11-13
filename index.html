@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>键盘导航</title>
+    <title>自定义键盘导航</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -47,21 +47,36 @@
                     img.src = 'http://' + hash[row[index2]] + '/favicon.ico'
                 }
                 else {
-                    img.src = 'https://i.loli.net/2017/11/10/5a05afbc5e183.png'
+                    img.src = '//i.loli.net/2017/11/10/5a05afbc5e183.png'
                 }
-
-                console.log(img.src)
+                img.onerror=function(xxx)
+                {
+                    console.log('下载失败了')
+                    console.log(xxx)
+                    xxx.target.src='//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                }
                 kbd.appendChild(img)
+                
                 button.onclick = function (zxcvbnm) {
-                    key = zxcvbnm['target']['id']
+                   //console.log(zxcvbnm)
+                    button2=zxcvbnm['target']
+                    img2=button2.previousSibling
+                    key=button2['id']
+                   //key = zxcvbnm['target']['id']
                     x = prompt('给我一个网址')
                     hash[key] = x
+                    img2.src='http://'+x+'favicon.ico'
+                    img.onerror=function(xxx)
+                    {
+                        console.log('下载失败了')
+                        console.log(xxx)
+                        xxx.target.src='//i.loli.net/2017/11/10/5a05afbc5e183.png'
+                    }
                     localStorage.setItem('zzz', JSON.stringify(hash))
                     console.log(hash)
                 }
                 kbd.appendChild(button)
                 div.appendChild(kbd)
-
                 index2 = index2 + 1
             }
             index = index + 1
